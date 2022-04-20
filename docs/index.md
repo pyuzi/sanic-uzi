@@ -1,4 +1,4 @@
-# XDI
+# Sanic XDI
 
 
 [![PyPi version][pypi-image]][pypi-link]
@@ -10,12 +10,13 @@
 `XDI` is a [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) library for Python.
 
 
+
 ## Installation
 
-Install from [PyPi](https://pypi.org/project/xdi/)
+Install from [PyPi](https://pypi.org/project/sanic-xdi/)
 
 ```
-pip install xdi
+pip install sanic-xdi
 ```
 
 ## Documentation
@@ -31,13 +32,13 @@ __This package is still in active development and should not be used in producti
 
 
 
-[docs-link]: https://pyxdi.github.io/xdi/
-[pypi-image]: https://img.shields.io/pypi/v/xdi.svg?color=%233d85c6
-[pypi-link]: https://pypi.python.org/pypi/xdi
-[pyversions-image]: https://img.shields.io/pypi/pyversions/xdi.svg
-[pyversions-link]: https://pypi.python.org/pypi/xdi
-[ci-image]: https://github.com/pyxdi/xdi/actions/workflows/workflow.yaml/badge.svg?event=push&branch=master
-[ci-link]: https://github.com/pyxdi/xdi/actions?query=workflow%3ACI%2FCD+event%3Apush+branch%3Amaster
-[codecov-image]: https://codecov.io/gh/pyxdi/xdi/branch/master/graph/badge.svg
-[codecov-link]: https://codecov.io/gh/pyxdi/xdi
+[docs-link]: https://pyxdi.github.io/sanic-xdi/
+[pypi-image]: https://img.shields.io/pypi/v/sanic-xdi.svg?color=%233d85c6
+[pypi-link]: https://pypi.python.org/pypi/sanic-xdi
+[pyversions-image]: https://img.shields.io/pypi/pyversions/sanic-xdi.svg
+[pyversions-link]: https://pypi.python.org/pypi/sanic-xdi
+[ci-image]: https://github.com/pyxdi/sanic-xdi/actions/workflows/workflow.yaml/badge.svg?event=push&branch=master
+[ci-link]: https://github.com/pyxdi/sanic-xdi/actions?query=workflow%3ACI%2FCD+event%3Apush+branch%3Amaster
+[codecov-image]: https://codecov.io/gh/pyxdi/sanic-xdi/branch/master/graph/badge.svg
+[codecov-link]: https://codecov.io/gh/pyxdi/sanic-xdi
 

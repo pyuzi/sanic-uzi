@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "sanic-xdi"
-version = "0.3.3"
+version = "0.4.0"
 description = "Sanic xdi adapter"
 authors = ["David Kyalo <davidmkyalo@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/pyxdi/xdi"
+repository = "https://github.com/pyxdi/sanic-xdi"
 documentation = "https://pyxdi.github.io/xdi"
 keywords = [
     "dependency-injection",
@@ -51,7 +51,7 @@ black = {version = "^22.3.0", allow-prereleases = true}
 
 
 [tool.pytest.ini_options]
-addopts = "--cov=xdi --cov-report html --cov-config pyproject.toml"
+addopts = "--cov=sanic_xdi --cov-report html --cov-config pyproject.toml"
 asyncio_mode="auto"
 
 
@@ -59,10 +59,12 @@ asyncio_mode="auto"
 log_level = "DEBUG"
 
 # Glob-style pattern(s) for matching the test modules.
-python_files = "tests/**/test.py tests/**/tests.py tests/**/*_test.py tests/**/*_tests.py"
+python_files = "tests.py *_test.py *_tests.py"
 
 #Pattern for matching test classes
 python_classes = "*Test *Tests"
+python_functions = "*_test test_*"
+
 
 #Test markers
 

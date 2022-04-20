@@ -4,9 +4,9 @@ theme:
   custom_dir: docs/override
 
 
-repo_name: pyxdi/xdi
-repo_url: https://github.com/pyxdi/xdi
-edit_uri: "blob/main/docs/"
+repo_name: pyxdi/sanic-xdi
+repo_url: https://github.com/pyxdi/sanic-xdi
+edit_uri: "blob/master/docs/"
 
 
 markdown_extensions:
