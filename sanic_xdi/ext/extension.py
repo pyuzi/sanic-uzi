@@ -9,6 +9,9 @@ from xdi.containers import Container
 
 from xdi.scopes import Scope, NullScope
 
+from .. import inject
+
+
 if t.TYPE_CHECKING:
     from . import Extend
 
@@ -18,7 +21,10 @@ class XDIExtension(Extension):
     name = "xdi"
 
     config: 'Config'
-    scope: Scope
+
+    def __init__(self, app: Sanic, config: Config) -> None:
+        super().__init__(app, config)
+        self.auto_wire = config.get('XDI_AUTO_WIRE', True)
     
     def label(self):
         return f"{len(self.scope.container)} added"
@@ -30,25 +36,29 @@ class XDIExtension(Extension):
 
         if container:
             if not scope:
-                scope = Scope(container, base_scope or NullScope())
+                scope = Scope(container, base_scope)
             elif not container is scope.container:
                 raise ValueError(f'scope container mis-match')
         elif scope:
             container = scope.container
         elif not container is False:
             container = Container(self.app.name)
-            scope = Scope(container, base_scope or NullScope())
+            scope = Scope(container, base_scope)
         
         ext._xdi_scope = ctx.xdi_container, ctx.xdi_scope = container, scope
 
     def startup(self, bootstrap: 'Extend') -> None:
-        scope = self._setup(bootstrap)
-        # self._wrap_entrypoints()
+        self._setup(bootstrap)
+        self.auto_wire and self._wire_entrypoints()
 
-    def _wrap_entrypoints(self, ext: 'Extend'):
+    def _wire_entrypoints(self):
         app = self.app
+
         @app.after_server_start
         async def wrap_entrypoints(app: Sanic, _):
+            
+            scope: Scope = app.ctx.xdi_scope
+            container = scope.container
 
             for route in app.router.routes:
                 if ".openapi." in route.name:
@@ -74,7 +84,9 @@ class XDIExtension(Extension):
                         hints = t.get_type_hints(handler)
                     except TypeError:
                         continue
-
+                    
+                    # inject()
+                    
                     # injections: dict[
                     #     str, tuple[type, t.Optional[t.Callable[..., t.Any]]]
                     # ] = {

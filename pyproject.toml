@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sanic-xdi"
-version = "0.4.0"
+version = "0.4.1"
 description = "Sanic xdi adapter"
 authors = ["David Kyalo <davidmkyalo@gmail.com>"]
 license = "MIT"
@@ -32,7 +32,7 @@ build-backend = "poetry.core.masonry.api"
 
 
 [tool.poetry.dependencies]
-xdi = "^0.3.3"
+xdi = "^0.4.0"
 python = "^3.9"
 typing-extensions = "^4.1.1"
 sanic = {extras = ["ext"], version = "^22.3.1"}
