@@ -12,10 +12,10 @@ from sanic_ext.extensions.openapi.extension import OpenAPIExtension
 from sanic_ext.extensions.templating.extension import TemplatingExtension
 from sanic_ext.utils.string import camel_to_snake
 
-from xdi.containers import Container
-from xdi.scopes import Scope
+from uzi.containers import Container
+from uzi.scopes import Scope
 
-from .extension import XDIExtension
+from .extension import UziExtension
 
 # try:
 #     from jinja2 import Environment
@@ -26,7 +26,7 @@ from .extension import XDIExtension
 
 class Extend(BaseExtend):
 
-    xdi_container: Container
+    uzi_container: Container
 
     def __init__(
         self,
@@ -40,7 +40,7 @@ class Extend(BaseExtend):
 
         extensions = [
             *(extensions or ()), 
-            XDIExtension
+            UziExtension
         ]
         
         built_in_extensions and extensions.extend((
@@ -49,7 +49,7 @@ class Extend(BaseExtend):
             *(TEMPLATING_ENABLED and (TemplatingExtension,) or ())
         ))
 
-        self._xdi_scope = None
+        self._uzi_scope = None
 
         super().__init__(
             app,
@@ -61,20 +61,20 @@ class Extend(BaseExtend):
 
 
     @property
-    def xdi_container(self) -> Container:
-        return self._xdi_scope.container
+    def uzi_container(self) -> Container:
+        return self._uzi_scope.container
 
     def add_dependency(
         self,
         type: type,
         constructor: Callable[..., t.Any] = None,
     ) -> None:
-        if not self._xdi_scope:
-            raise SanicException("XDI extension not enabled")
-        self.xdi_container.factory(type, constructor)
+        if not self._uzi_scope:
+            raise SanicException("Uzi extension not enabled")
+        self.uzi_container.factory(type, constructor)
 
     def dependency(self, obj: t.Any, name: str = None, type: type = None) -> None:
         type = type or obj.__type__
         name = name or camel_to_snake(type.__name__)
         setattr(self.app.ctx._dependencies, name, obj)
-        self.xdi_container.value(type, obj)
+        self.uzi_container.value(type, obj)

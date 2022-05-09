@@ -3,7 +3,7 @@ import typing as t
 from collections.abc import Callable
 from functools import partial, update_wrapper
 
-from xdi import providers
+from uzi import providers
 
 
 from sanic import Request, Sanic
@@ -21,7 +21,7 @@ def inject(handler: Callable, /, *args, **kwds):
     else:
         func = handler      
 
-    if hasattr(func, '__xdi_provider__'):
+    if hasattr(func, '__uzi_provider__'):
         raise ValueError(f'{handler!s} already wired')
 
     elif isinstance(func, MethodType):
@@ -31,10 +31,10 @@ def inject(handler: Callable, /, *args, **kwds):
 
     def wrapper(req: t.Union[Sanic, Request, Router], *a, **kw):
         nonlocal provider
-        return req.ctx._xdi_injector(provider, req, *a, **kw)
+        return req.ctx._uzi_injector.make(provider, req, *a, **kw)
     
     update_wrapper(wrapper, func)
-    wrapper.__xdi_provider__ = provider
+    wrapper.__uzi_provider__ = provider
 
     return wrapper
 

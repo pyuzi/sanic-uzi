@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "sanic-xdi"
-version = "0.4.1"
-description = "Sanic xdi adapter"
+name = "sanic-uzi"
+version = "0.0.0"
+description = "Sanic uzi adapter"
 authors = ["David Kyalo <davidmkyalo@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/pyxdi/sanic-xdi"
-documentation = "https://pyxdi.github.io/xdi"
+repository = "https://github.com/pyuzi/sanic-uzi"
+documentation = "https://pyuzi.github.io/uzi"
 keywords = [
     "dependency-injection",
     "inversion-of-control",
@@ -15,10 +15,10 @@ keywords = [
     "IoC-Container",
     "service-injector",
     "injector",
-    "sanic-xdi",
+    "sanic-uzi",
     "IoC",
     "DI",
-    "XDI",
+    "Uzi",
 ]
 classifiers = [
     "Programming Language :: Python :: 3.9",
@@ -32,7 +32,7 @@ build-backend = "poetry.core.masonry.api"
 
 
 [tool.poetry.dependencies]
-xdi = "^0.4.0"
+uzi = "~0.0.0"
 python = "^3.9"
 typing-extensions = "^4.1.1"
 sanic = {extras = ["ext"], version = "^22.3.1"}
@@ -48,10 +48,11 @@ mkdocs-material = "^8.2.8"
 mike = "^1.1.2"
 coverage-conditional-plugin = "^0.5.0"
 black = {version = "^22.3.0", allow-prereleases = true}
+sanic-testing = "^22.3.0"
 
 
 [tool.pytest.ini_options]
-addopts = "--cov=sanic_xdi --cov-report html --cov-config pyproject.toml"
+addopts = "--cov=sanic_uzi --cov-report html --cov-config pyproject.toml"
 asyncio_mode="auto"
 
 

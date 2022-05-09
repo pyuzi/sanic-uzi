@@ -1,4 +1,4 @@
-# Sanic XDI
+# Sanic Uzi
 
 
 [![PyPi version][pypi-image]][pypi-link]
@@ -7,16 +7,16 @@
 [![Coverage status][codecov-image]][codecov-link]
 
 
-`XDI` is a [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) library for Python.
+`Uzi` is a [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) library for Python.
 
 
 
 ## Installation
 
-Install from [PyPi](https://pypi.org/project/sanic-xdi/)
+Install from [PyPi](https://pypi.org/project/sanic-uzi/)
 
 ```
-pip install sanic-xdi
+pip install sanic-uzi
 ```
 
 ## Documentation
@@ -32,13 +32,13 @@ __This package is still in active development and should not be used in producti
 
 
 
-[docs-link]: https://pyxdi.github.io/sanic-xdi/
-[pypi-image]: https://img.shields.io/pypi/v/sanic-xdi.svg?color=%233d85c6
-[pypi-link]: https://pypi.python.org/pypi/sanic-xdi
-[pyversions-image]: https://img.shields.io/pypi/pyversions/sanic-xdi.svg
-[pyversions-link]: https://pypi.python.org/pypi/sanic-xdi
-[ci-image]: https://github.com/pyxdi/sanic-xdi/actions/workflows/workflow.yaml/badge.svg?event=push&branch=master
-[ci-link]: https://github.com/pyxdi/sanic-xdi/actions?query=workflow%3ACI%2FCD+event%3Apush+branch%3Amaster
-[codecov-image]: https://codecov.io/gh/pyxdi/sanic-xdi/branch/master/graph/badge.svg
-[codecov-link]: https://codecov.io/gh/pyxdi/sanic-xdi
+[docs-link]: https://pyuzi.github.io/sanic-uzi/
+[pypi-image]: https://img.shields.io/pypi/v/sanic-uzi.svg?color=%233d85c6
+[pypi-link]: https://pypi.python.org/pypi/sanic-uzi
+[pyversions-image]: https://img.shields.io/pypi/pyversions/sanic-uzi.svg
+[pyversions-link]: https://pypi.python.org/pypi/sanic-uzi
+[ci-image]: https://github.com/pyuzi/sanic-uzi/actions/workflows/workflow.yaml/badge.svg?event=push&branch=master
+[ci-link]: https://github.com/pyuzi/sanic-uzi/actions?query=workflow%3ACI%2FCD+event%3Apush+branch%3Amaster
+[codecov-image]: https://codecov.io/gh/pyuzi/sanic-uzi/branch/master/graph/badge.svg
+[codecov-link]: https://codecov.io/gh/pyuzi/sanic-uzi
 

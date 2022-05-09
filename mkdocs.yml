@@ -1,11 +1,11 @@
-site_name: XDI
+site_name: Uzi
 theme:
   name: material
   custom_dir: docs/override
 
 
-repo_name: pyxdi/sanic-xdi
-repo_url: https://github.com/pyxdi/sanic-xdi
+repo_name: pyuzi/sanic-uzi
+repo_url: https://github.com/pyuzi/sanic-uzi
 edit_uri: "blob/master/docs/"
 
 

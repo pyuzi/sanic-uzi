@@ -3,9 +3,9 @@ import pytest
 
 from sanic import Sanic
 
-from sanic_xdi import inject
-from sanic_xdi.ext import Extend
-from sanic_xdi.ext.extension import XDIExtension
+from sanic_uzi import inject
+from sanic_uzi.ext import Extend
+from sanic_uzi.ext.extension import UziExtension
 
 
 
